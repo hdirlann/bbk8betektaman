@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, CircleUser } from "lucide-react";
 
 const menus = [
   { name: "Home", path: "/" },
@@ -14,34 +14,36 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center px-6">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/logo-desa.png"
-            alt="Logo Desa"
-            className="h-10 w-10 object-contain"
-          />
+        <div className="flex flex-1">
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/logo-desa.png"
+              alt="Logo Desa"
+              className="h-11 w-11 object-contain"
+            />
 
-          <div>
-            <h1 className="text-lg font-bold text-green-700">
-              Desa Betektaman
-            </h1>
+            <div>
+              <h1 className="text-xl font-bold text-green-700">
+                Desa Betektaman
+              </h1>
 
-            <p className="text-xs text-gray-500">
-              Kecamatan Gading • Probolinggo
-            </p>
-          </div>
-        </Link>
+              <p className="text-xs text-gray-500">
+                Kecamatan Gading • Probolinggo
+              </p>
+            </div>
+          </Link>
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden flex-1 items-center justify-center gap-10 md:flex">
           {menus.map((menu) => (
             <li key={menu.path}>
               <NavLink
                 to={menu.path}
                 className={({ isActive }) =>
-                  `transition font-medium ${
+                  `font-medium transition ${
                     isActive
                       ? "text-green-700"
                       : "text-gray-700 hover:text-green-700"
@@ -54,10 +56,21 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Icon Admin */}
+        <div className="hidden flex-1 justify-end md:flex">
+          <Link
+            to="/admin/login"
+            title="Login Admin"
+            className="rounded-full p-2 text-gray-600 transition hover:bg-green-50 hover:text-green-700"
+          >
+            <CircleUser size={26} />
+          </Link>
+        </div>
+
         {/* Mobile Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden"
+          className="ml-auto md:hidden"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -82,6 +95,15 @@ export default function Navbar() {
               {menu.name}
             </NavLink>
           ))}
+
+          <Link
+            to="/admin/login"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 border-t px-6 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700"
+          >
+            <CircleUser size={22} />
+            Login Admin
+          </Link>
         </div>
       )}
     </header>

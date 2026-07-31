@@ -1,10 +1,29 @@
 import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+
+import ProductHero from "../sections/product/ProductHero";
+import FeaturedProduct from "../sections/product/FeaturedProduct";
+import SearchProduct from "../sections/product/SearchProduct";
+import ProductGrid from "../sections/product/ProductGrid";
 
 export default function Product() {
   return (
     <>
       <Navbar />
-      <h1 className="p-10 text-4xl font-bold">Produk</h1>
+
+      <main>
+
+        <ProductHero />
+
+        <FeaturedProduct />
+
+        <SearchProduct />
+
+        <ProductGrid />
+
+      </main>
+
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,24 @@
 import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+
+import NewsHero from "../sections/news/NewsHero";
+import FeaturedNews from "../sections/news/FeaturedNews";
+import SearchNews from "../sections/news/SearchNews";
+import NewsGrid from "../sections/news/NewsGrid";
 
 export default function News() {
   return (
     <>
       <Navbar />
-      <h1 className="p-10 text-4xl font-bold">Berita</h1>
+
+      <main>
+        <NewsHero />
+        <FeaturedNews />
+        <SearchNews />
+        <NewsGrid />
+      </main>
+
+      <Footer />
     </>
   );
 }

@@ -29,8 +29,6 @@ export default function Home() {
 
       <Gallery />
 
-      <Location />
-
       <Footer />
     </>
   );

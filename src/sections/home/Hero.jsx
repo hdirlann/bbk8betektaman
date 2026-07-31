@@ -6,7 +6,7 @@ export default function Hero() {
     <section
       className="relative h-screen bg-cover bg-center"
       style={{
-        backgroundImage: "url('/images/hero/hero.jpg')",
+        backgroundImage: "url('/images/hero/)",
       }}
     >
       {/* Overlay */}
