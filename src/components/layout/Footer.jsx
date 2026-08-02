@@ -1,74 +1,187 @@
-import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+
+import { FaInstagram } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-green-900 text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
+
+      {/* Main Footer */}
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-14 md:grid-cols-2 lg:grid-cols-4">
 
         {/* Desa */}
         <div>
-          <h3 className="mb-4 text-2xl font-bold">
-            Desa Betektaman
-          </h3>
 
-          <p className="text-green-100">
-            Website resmi Pemerintah Desa Betektaman,
-            Kecamatan Gading, Kabupaten Probolinggo.
+          <h2 className="text-3xl font-bold">
+            Desa Betektaman
+          </h2>
+
+          <p className="mt-5 leading-8 text-green-100">
+            Website resmi Pemerintah Desa
+            Betektaman, Kecamatan Gading,
+            Kabupaten Probolinggo.
           </p>
+
         </div>
 
         {/* Menu */}
         <div>
-          <h4 className="mb-4 font-semibold">Menu</h4>
 
-          <ul className="space-y-2 text-green-100">
-            <li>Home</li>
-            <li>Profil</li>
-            <li>Berita</li>
-            <li>Produk</li>
+          <h3 className="mb-5 text-xl font-semibold">
+            Menu
+          </h3>
+
+          <ul className="space-y-3 text-green-100">
+
+            <li>
+              <Link
+                to="/"
+                className="transition hover:text-white"
+              >
+                Beranda
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/profile"
+                className="transition hover:text-white"
+              >
+                Profil
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/products"
+                className="transition hover:text-white"
+              >
+                Produk
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/news"
+                className="transition hover:text-white"
+              >
+                Berita
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/contact"
+                className="transition hover:text-white"
+              >
+                Kontak
+              </Link>
+            </li>
+
           </ul>
+
         </div>
 
         {/* Kontak */}
         <div>
-          <h4 className="mb-4 font-semibold">Kontak</h4>
 
-          <div className="space-y-3 text-green-100">
-            <p className="flex items-center gap-2">
-              <MapPin size={18} />
-              Gading, Kabupaten Probolinggo
-            </p>
+          <h3 className="mb-5 text-xl font-semibold">
+            Kontak
+          </h3>
 
-            <p className="flex items-center gap-2">
-              <Phone size={18} />
-              (0335) xxxx
-            </p>
+          <div className="space-y-4 text-green-100">
 
-            <p className="flex items-center gap-2">
-              <Mail size={18} />
-              info@betektaman.desa.id
-            </p>
+            <div className="flex items-start gap-3">
+
+              <MapPin
+                size={20}
+                className="mt-1 flex-shrink-0"
+              />
+
+              <span>
+                Desa Betektaman,
+                Kecamatan Gading,
+                Kabupaten Probolinggo
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-3">
+
+              <Phone size={20} />
+
+              <span>+62 851-4131-3336</span>
+
+            </div>
+
+            <div className="flex items-center gap-3">
+
+              <Mail size={20} />
+
+              <span className="break-all">
+                bbk8unairbetektaman2@gmail.com
+              </span>
+
+            </div>
+
           </div>
+
         </div>
 
-        {/* Sosial Media */}
+        {/* Instagram */}
         <div>
-          <h4 className="mb-4 font-semibold">
-            Ikuti Kami
-          </h4>
 
-          <div className="flex gap-4 text-2xl">
-            <FaFacebookF className="cursor-pointer hover:text-blue-400 transition" />
-            <FaInstagram className="cursor-pointer hover:text-pink-400 transition" />
-          </div>
+          <h3 className="mb-5 text-xl font-semibold">
+            Ikuti Kami
+          </h3>
+
+          <a
+            href="https://www.instagram.com/pemdes.betektaman?igsh=MWJyOHlxMmljMjh6Zw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-800 text-xl transition hover:bg-white hover:text-green-900"
+          >
+            <FaInstagram />
+          </a>
+
+          <p className="mt-4 text-sm leading-7 text-green-100">
+            Ikuti media sosial kami untuk
+            memperoleh informasi terbaru
+            mengenai kegiatan dan potensi
+            Desa Betektaman.
+          </p>
+
         </div>
 
       </div>
 
-      <div className="border-t border-green-800 py-5 text-center text-sm text-green-200">
-        © {new Date().getFullYear()} Pemerintah Desa Betektaman. All Rights Reserved.
+      {/* Bottom Footer */}
+
+      <div className="border-t border-green-800">
+
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-center text-sm text-green-200 md:flex-row">
+
+          <p>
+            © 2026 Pemerintah Desa
+            Betektaman. Seluruh hak cipta
+            dilindungi.
+          </p>
+
+          <p>
+            Dikembangkan oleh Tim BBK 8
+            Universitas Airlangga.
+          </p>
+
+        </div>
+
       </div>
+
     </footer>
   );
 }
